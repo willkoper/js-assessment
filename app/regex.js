@@ -48,7 +48,7 @@ define(function() {
 		}
     },
     isUSD : function(str) {
-		if(str.match(/^\$\d{0,3}(,\d{3})*(\.\d{2}){0,1}$/) !== null){
+		if(str.match(/^\$\d{1,3}(,\d{3})*(\.\d{2}){0,1}$/) !== null){
 			return true;
 		}
 		else{
