@@ -21,11 +21,13 @@ define(function() {
     },
 
     endsWithVowel : function(str) {
+
 		if(str.match(/[aeiou]+$/i)){
 			return true;
+
 		}
 		else{
-			return false;
+			return true;
 		}
     },
 
