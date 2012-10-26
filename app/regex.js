@@ -16,11 +16,11 @@ define(function() {
     },
 
     endsWithVowel : function(str) {
-		if(str.match(/[aeiou]+$/g)){
-			return true;
+		if(str.match(/[aeiou]+?$/i) === null ){
+			return false;
 		}
 		else{
-			return false;
+			return true;
 		}
     },
 
