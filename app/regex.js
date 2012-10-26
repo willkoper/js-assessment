@@ -22,12 +22,12 @@ define(function() {
 
     endsWithVowel : function(str) {
 
-		if(str.match(/[aeiou]+$/i)){
+		if(str.match(/[aeiou]+$/i) !== null){
 			return true;
 
 		}
 		else{
-			return true;
+			return false;
 		}
     },
 
