@@ -12,27 +12,50 @@ define(function() {
     },
 
     containsRepeatingLetter : function(str) {
-
+		if(str.match(/([a-z])\1/gi)){
+			return true;
+		}
+		else{
+			return false;
+		}
     },
 
     endsWithVowel : function(str) {
-		if(str.match(/[aeiou]+?$/i) === null ){
-			return false;
+
+		if(str.match(/[aeiou]+$/i) !== null){
+			return true;
+
 		}
 		else{
-			return true;
+			return false;
 		}
     },
 
     captureThreeNumbers : function(str) {
-
+		var numbers = str.match(/\d\d\d/g);
+		if(numbers !== null){
+			return numbers[0];
+		}
+		else{
+		return false;
+		}
     },
 
     matchesPattern : function(str) {
-
+		if(str.match(/^\d{3}-\d{3}-\d{4}$/) !== null){
+			return true;
+		}
+		else{
+			return false;
+		}
     },
     isUSD : function(str) {
-
+		if(str.match(/^\$\d{1,3}(,\d{3})*(\.\d{2}){0,1}$/) !== null){
+			return true;
+		}
+		else{
+			return false;
+		}
     }
   };
 });

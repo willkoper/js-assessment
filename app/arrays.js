@@ -81,17 +81,45 @@ define(function() {
     },
 
     duplicates : function(arr) {
-		var duplicates = function(){
+		var output = [],
+			isDuplicate = function(arr, target){
+				var s;
+				for ( s = 0; s< arr.length; s +=1){
+					if (arr[s] === target && s !== arr.indexOf(target)){
+					return true;
+					}
+				}
+				return false;
+			}
+		for (var i = 0; i <arr.length; i +=1){
+			if(isDuplicate(arr, arr[i]) && 
+				output.indexOf(arr[i]) === -1
+			){
+				output[output.length] = arr[i];
 			
+			}
 		}
+		return output;
     },
 
     square : function(arr) {
-
+		var output = [],
+			i;
+		for (i=0; i< arr.length; i+=1){
+			output[i] = arr[i] * arr[i];
+		}
+		return output;
     },
 
     findAllOccurrences : function(arr, target) {
-
+		var output = [],
+			i;
+		for (i = 0; i < arr.length; i +=1){
+			if (arr[i] === target){
+				output[output.length] = i;
+			}
+		}
+		return output;
     }
   };
 });
