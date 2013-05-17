@@ -21,8 +21,9 @@ define(function() {
     },
 
     endsWithVowel : function(str) {
-		if(str.match(/[aeiou]+?$/i) === null ){
-			return false;
+
+		if(str.match(/[aeiou]+$/i) !== null){
+			return true;
 		}
 		else{
 			return false;

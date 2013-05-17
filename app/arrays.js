@@ -3,7 +3,11 @@ if (typeof define !== 'function') { var define = require('amdefine')(module); }
 define(function() {
   return {
     indexOf : function(arr, item) {
+<<<<<<< HEAD
 
+=======
+		
+>>>>>>> 160f9034c3f0f88016cbb6ec72f384370c5c2e0c
 		return arr.indexOf(item);
     },
 
@@ -23,7 +27,11 @@ define(function() {
     },
 
     remove : function(arr, item) {
+<<<<<<< HEAD
 	var index;
+=======
+    	var index;
+>>>>>>> 160f9034c3f0f88016cbb6ec72f384370c5c2e0c
 		for(var i=0; i<arr.length; i += 1){
 			if(arr[i] === item){
 				arr.splice (i, 1);
@@ -74,14 +82,11 @@ define(function() {
 			if (arr[index] === item){
 				count +=1
 			}
-
-
 		}
 		return count;
     },
 
     duplicates : function(arr) {
-
 		var output = [],
 			isDuplicate = function(arr, target){
 				var s;
@@ -93,7 +98,8 @@ define(function() {
 				return false;
 			}
 		for (var i = 0; i <arr.length; i +=1){
-			if(isDuplicate(arr, arr[i]) &&
+
+			if(isDuplicate(arr, arr[i]) && 
 				output.indexOf(arr[i]) === -1
 			){
 				output[output.length] = arr[i];

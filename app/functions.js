@@ -4,6 +4,7 @@ define(function() {
   return {
     argsAsArray : function(fn, arr) {
 	// see http://www.drdobbs.com/open-source/currying-and-partial-functions-in-javasc/231001821
+
 		return fn.apply(null, arr);
     },
 
@@ -16,7 +17,6 @@ define(function() {
 	//str is a parameter passed to function what that takes another string as its param
 		var what = function(nextStr){
 		return str + ', ' + nextStr;
-
 		}
 		return what;
     },
@@ -24,6 +24,7 @@ define(function() {
     makeClosures : function(arr, fn) {
 
 	//see http://robertnyman.com/2008/10/09/explaining-javascript-scope-and-closures/
+
 		var output = [],
 			i;
 			function close(x){
