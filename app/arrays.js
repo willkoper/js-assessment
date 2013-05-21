@@ -3,11 +3,6 @@ if (typeof define !== 'function') { var define = require('amdefine')(module); }
 define(function() {
   return {
     indexOf : function(arr, item) {
-<<<<<<< HEAD
-
-=======
-		
->>>>>>> 160f9034c3f0f88016cbb6ec72f384370c5c2e0c
 		return arr.indexOf(item);
     },
 
@@ -27,28 +22,28 @@ define(function() {
     },
 
     remove : function(arr, item) {
-<<<<<<< HEAD
-	var index;
-=======
-    	var index;
->>>>>>> 160f9034c3f0f88016cbb6ec72f384370c5c2e0c
-		for(var i=0; i<arr.length; i += 1){
-			if(arr[i] === item){
-				arr.splice (i, 1);
-				continue;
-			}
-		}
+	var i=0;
+    	while (i < arr.length){
+    		if (arr[i] === item){
+    			arr.splice(i, 1);
+    		}
+    		else{
+    			i +=1
+    		}
+    	}
 		return arr;
     },
     
     removeWithoutCopy : function(arr, item) {
-		var index;
-		for(var i=0; i<arr.length; i += 1){
-			if(arr[i] === item){
-				arr.splice (i, 1);
-				continue;
-			}
-		}
+    	var i=0;
+    	while (i < arr.length){
+    		if (arr[i] === item){
+    			arr.splice(i, 1);
+    		}
+    		else{
+    			i +=1
+    		}
+    	}
 		return arr;
     },
 
@@ -76,14 +71,11 @@ define(function() {
     },
 
     count : function(arr, item) {
-		var count = 0,
-			index;
-		for (index =0; index< arr.length; index +=1){
-			if (arr[index] === item){
-				count +=1
-			}
+		arr.sort();
+		if(arr.indexOf(item) === -1){
+			return 0;
 		}
-		return count;
+		return(1 + arr.lastIndexOf(item) - arr.indexOf(item) )
     },
 
     duplicates : function(arr) {

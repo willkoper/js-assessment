@@ -13,16 +13,21 @@ define([
     });
 
     it('you should be able to determine the location of an item in an array', function() {
+      //Hint: see https://developer.mozilla.org/en-US/docs/JavaScript/Reference/Global_Objects/Array/indexOf
       expect(answers.indexOf(a, 3)).to.eql(2);
       expect(answers.indexOf(a, 5)).to.eql(-1);
     });
 
     it('you should be able to add the values of an array', function() {
+      //Hint: 
       expect(answers.sum(a)).to.eql(10);
     });
 
     it('you should be able to remove a value from an array', function() {
       a.push(2); // Make sure the value appears more than one time
+      // Hint: you will need to iterate through all members of the array
+      // https://developer.mozilla.org/en-US/docs/JavaScript/Reference/Global_Objects/Array/forEach
+      // https://developer.mozilla.org/en-US/docs/JavaScript/Reference/Statements/for
       var result = answers.remove(a, 2);
 
       expect(result).to.have.length(3);
@@ -73,9 +78,9 @@ define([
     });
 
     it('you should be able to count the occurences of an item in an array', function() {
-      var result = answers.count([ 1, 1, 1, 2, 1, 3 ], 1);
 
-      expect(result).to.eql(4);
+      expect(answers.count([ 1, 1, 1, 2, 1, 3 ], 1)).to.eql(4);
+      expect(answers.count([ 1, 1, 1, 2, 1, 3 ], 0)).to.eql(0);
     });
 
     it('you should be able to find duplicates in an array', function() {
